@@ -5,8 +5,6 @@
 #include <vector>
 #include <string>
 #include <libraries/AudioFile/AudioFile.h>
-#include <Bela.h>
-
 #include <cmath>
 
 #pragma once

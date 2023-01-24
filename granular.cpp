@@ -157,14 +157,14 @@ void Granular::setGrainSizeRandomness(float randomness) {
 
 void Granular::updateGrain(float grainIdx) {
 
-	this->_grainSizes[grainIdx] = this->_grainSize;
+	_grainSizes[grainIdx] = _grainSize;
 	_filePositions[grainIdx] = _filePosition;
 	
 	// _muted[grainIdx] = rand()%100 > _probability;
 	
 	float random = rand()%100;
-	this->_grainSizes[grainIdx] -= (random/100.0*_grainSizeRandomness*_grainSize);
-	this->_filePositions[grainIdx] += (random/100.0*_filePositionRandomness*_filePosition);
+	_grainSizes[grainIdx] -= (random/100.0*_grainSizeRandomness*_grainSize);
+	_filePositions[grainIdx] += (random/100.0*_filePositionRandomness*_filePosition);
 }
 
 void Granular::updateAllGrains() {
