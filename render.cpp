@@ -92,21 +92,21 @@ void render(BelaContext *context, void *userData)
 		filePositionRandomness = controller.getSliderValue(fpRandSlider);
 	#endif
 	
-  for(unsigned int n = 0; n < context->audioFrames; n++) {
-    	
+	for(unsigned int n = 0; n < context->audioFrames; n++) {
+
 		_granularInstance.setGrainSizeMS(grainSize);
-  	_granularInstance.setFilePositionMS(filePosition);
-  	_granularInstance.setPlaybackSpeed(playbackSpeed);
-  	_granularInstance.setGrainSizeRandomness(grainSizeRandomness);
-  	_granularInstance.setFilePositionRandomness(filePositionRandomness);
-  	_granularInstance.setProbability(0.5);
+		_granularInstance.setFilePositionMS(filePosition);
+		_granularInstance.setPlaybackSpeed(playbackSpeed);
+		_granularInstance.setGrainSizeRandomness(grainSizeRandomness);
+		_granularInstance.setFilePositionRandomness(filePositionRandomness);
+		_granularInstance.setProbability(0.5);
 
 		float out = _granularInstance.process();
 
 		for(unsigned int channel = 0; channel < context->audioOutChannels; channel++) {
 			audioWrite(context, n, channel, out);
 		}
-  }
+	}
 }
 
 
