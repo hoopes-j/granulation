@@ -1,2 +1,2 @@
 # granulation
-Granulator for Bela Platform
+granulator for Bela Platform
